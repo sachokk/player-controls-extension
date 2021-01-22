@@ -1,6 +1,6 @@
 import { getDisplayDateTime, getPalette } from './utils';
 
-export function renderDateTime() {
+export function renderDateTime(hasErrors: boolean = false) {
   const { date, time, period } = getDisplayDateTime();
   const palette = getPalette(period);
   const root = document.getElementById('root');
@@ -11,4 +11,5 @@ export function renderDateTime() {
   headingDate.style.color = palette;
   headingTime.style.color = palette;
   root.style.backgroundImage = `url('images/${period}.png')`;
+  root.style.border = `3px solid ${hasErrors ? "red" : "green"}`;
 }

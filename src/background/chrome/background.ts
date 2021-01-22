@@ -1,13 +1,19 @@
 /// <reference types="chrome"/>
 
-chrome.runtime.onInstalled.addListener(function () {
-  // Make extension work on all pages
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
-    chrome.declarativeContent.onPageChanged.addRules([
-      {
-        conditions: [new chrome.declarativeContent.PageStateMatcher({})],
-        actions: [new chrome.declarativeContent.ShowPageAction()],
-      },
-    ]);
-  });
-});
+// chrome.runtime.onInstalled.addListener(function () {
+//   // Replace all rules ...
+//   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
+//     // With a new rule ...
+//     chrome.declarativeContent.onPageChanged.addRules([
+//       {
+//         conditions: [
+//           new chrome.declarativeContent.PageStateMatcher({
+//             pageUrl: { urlContains: "youtube.com" },
+//           }),
+//         ],
+//         // And shows the extension's page action.
+//         actions: [new chrome.declarativeContent.ShowPageAction()],
+//       },
+//     ]);
+//   });
+// });
