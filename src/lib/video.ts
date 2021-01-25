@@ -1,14 +1,16 @@
 import { DEFAULT_PLAYBACK_RATE, PLAYBACK_RATE_CHANGE_STEP } from "./constants";
 
 export class Video {
-  private videoElement: HTMLVideoElement;
+  public videoElement: HTMLVideoElement;
   private startPoint: number;
   private endPoint: number;
+  public duration: number;
 
   constructor(videoElement: HTMLVideoElement) {
     this.videoElement = videoElement;
     this.startPoint = this.videoElement.currentTime;
     this.endPoint = this.videoElement.duration;
+    this.duration = this.videoElement.duration;
     this.videoElement.addEventListener("timeupdate", this.loopVideo);
   }
 

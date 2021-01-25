@@ -1,6 +1,6 @@
 import sinon from "sinon";
 import { App } from "../lib/app";
-import * as Dom from "../lib/dom";
+import * as Dom from "../lib/points";
 
 describe("testing App", () => {
   let sandboxes;
@@ -8,7 +8,7 @@ describe("testing App", () => {
 
   beforeEach(() => {
     sandboxes = sinon.createSandbox();
-    renderDateTime = sandboxes.stub(Dom, "renderDateTime");
+    //renderDateTime = sandboxes.stub(Dom, "renderDateTime");
   });
 
   afterEach(() => {
